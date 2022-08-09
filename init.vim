@@ -15,28 +15,31 @@ set autoindent
 set background=dark
 set t_Co=256
 syntax enable
+
 let &t_8f="\<Esc>[38;2;%lu;lu;%lum]"
+
 let &t_8b="\<Esc>[40;2;%lu;lu;%lum]"
+
 set termguicolors
 if has("termguicolors")
 	  set termguicolors
   endif
 if has("autocmd")
+
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
 endif
+
 call plug#begin(stdpath('data').'/plugged')
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'connorholyday/vim-snazzy'
-	Plug 'StanAngeloff/php.vim'
-	Plug 'easymotion/vim-easymotion'
-	Plug 'yaegassy/coc-intelephense', {'do': 'yarn install --frozen-lockfile'}
 	Plug 'Pocco81/AutoSave.nvim'
+	Plug 'easymotion/vim-easymotion'
 	Plug 'scrooloose/nerdtree'
 	Plug 'christoomey/vim-tmux-navigator'
 	Plug 'jiangmiao/auto-pairs'
 	Plug 'arcticicestudio/nord-vim'
 	Plug 'alvan/vim-closetag'
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	Plug 'honza/vim-snippets', {'for': ['sh','html','php','css','sql']}
 	Plug 'mattn/emmet-vim'
 	Plug 'itchyny/lightline.vim'
 	Plug 'ryanoasis/vim-devicons'
@@ -48,7 +51,6 @@ call plug#begin(stdpath('data').'/plugged')
 	Plug 'ghifarit53/tokyonight-vim'
 	Plug 'morhetz/gruvbox'
 call plug#end()
-"colorscheme nord
 "colorscheme gruvbox
 colorscheme tokyonight
 set laststatus=2
@@ -72,26 +74,16 @@ nmap <leader>wq :wq<CR>
 nmap <leader>pi :PlugInstall<CR>
 nmap <leader>> 10<C-w>>
 nmap <leader>< 10<C-w><
+" use <tab> for trigger completion and navigate to the next complete item
+function! CheckBackspace() abort
+   let col = col('.') - 1
+   return !col || getline('.')[col - 1]  =~# '\s'
+   endfunction
+   inoremap <silent><expr> <Tab>
+   \ coc#pum#visible() ? coc#pum#next(1) :
+   \ CheckBackspace() ? "\<Tab>" :
+   \ coc#refresh()
 
-"""""Auto Save""""""""
-
-lua << EOF
-
-local autosave = require("autosave")
-
-autosave.setup(
-{
-   enabled = true,
-   execution_message = "AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"),
- 	events = {"InsertLeave", "TextChanged"},
-conditions = {
-	exists = true,
-	filetype_is_not = {},
-	modifiable = true
-},
-write_all_buffers = false,
-on_off_commands = true,
-clean_command_line_interval = 0,
-debounce_delay = 135
-}
-)
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+inoremap <silent><expr> <cr> coc#pum#visible() && coc#pum#info()['index'] != -1 ? coc#pum#confirm() : "\<C-g>u\<CR>"
