@@ -24,6 +24,9 @@ cursor:
     shape: Underline
     blinking: On
 
+shell:
+  program: C:\Program Files\PowerShell\7\pwsh.exe    
+
 draw_bold_text_with_bright_colors: true
 colors:
     # Default colors
