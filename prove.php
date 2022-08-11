@@ -1,4 +1,6 @@
 <?php
+	is_a()
+	PHP_OS
 	echo "hola";
 	$n1='y';
 
