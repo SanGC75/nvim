@@ -1,15 +1,13 @@
-<?php
-	is_a()
-	PHP_OS
-	echo "hola";
-	$n1='y';
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>TITULO</title>
+	</head>
+	<body>
+	
 
-	function hola($n1){
- 		echo $n1;
-	};
-?>
-<table>
-	<thead>
-				
-	</thead>
-</table>
+	</body>
+</html>
+
