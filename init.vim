@@ -1,5 +1,6 @@
 set number
 set mouse=a
+set showtabline=2
 set numberwidth=1
 set clipboard=unnamed
 set ruler
@@ -33,6 +34,8 @@ endif
 
 call plug#begin(stdpath('data').'/plugged')
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
 	Plug 'connorholyday/vim-snazzy'
 	Plug 'Pocco81/AutoSave.nvim'
 	Plug 'easymotion/vim-easymotion'
@@ -51,20 +54,30 @@ call plug#begin(stdpath('data').'/plugged')
 	Plug 'mhinz/vim-signify'
 	Plug 'ghifarit53/tokyonight-vim'
 	Plug 'morhetz/gruvbox'
+	Plug 'Rigellute/rigel'
 	Plug 'tribela/vim-transparent'
+	Plug 'GlennLeo/cobalt2'
 call plug#end()
 "colorscheme gruvbox
-colorscheme tokyonight
+"colorscheme tokyonight
+colorscheme cobalt2
 set laststatus=2
-let g:lightline = {
-		\ 'colorscheme': 'tokyonight',
-		\}
+"let g:lightline = {
+		"\ 'colorscheme': 'cobalt2',
+		"\}
 let mapleader = " "
 let NERDTreeQuitOnOpen = 1
+let g:airline#extensions#tabline#enable = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'deus'
+let g:airline_section_z='%{strftime("%x %I:%M %p")}'
+
 let g:closetag_filenames = '*.html,*.xhtml,*.php'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '>'
 let g:SnazzyTransparent = 1
 let g:indentLine_faster = 1
 let g:indentLine_setConceal = 0
@@ -72,6 +85,7 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_enabled = 1
 let g:indentLine_concealcursor = 'inc'
 let g:indentLine_conceallevel = 2
+
 """""Atajos de teclado"""""""
 nmap <leader>s <Plug>(easymotion-s2)
 nmap <leader>nt :NERDTreeFind<CR>
