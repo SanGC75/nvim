@@ -6,10 +6,10 @@
 		<title>TITULO</title>
 	</head>
 	<body>
-	
-
 	</body>
 </html>
 <?php
-	is_array($new);
+$sd = true;
+	is_array($sd);
 ?>
+
