@@ -67,18 +67,18 @@ set laststatus=2
 		"\}
 let mapleader = " "
 let NERDTreeQuitOnOpen = 1
-let g:airline#extensions#tabline#enable = 1
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ''
-let g:airline#extensions#tabline#right_sep = ''
-let g:airline#extensions#tabline#right_alt_sep = ''
+"let g:airline#extensions#tabline#enable = 1
+"let g:airline#extensions#tabline#left_sep = ''
+"let g:airline#extensions#tabline#left_alt_sep = ''
+"let g:airline#extensions#tabline#right_sep = ''
+"let g:airline#extensions#tabline#right_alt_sep = ''
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'deus'
+let g:airline_theme = 'bubblegum'
 let g:airline_section_z='%{strftime("%x %I:%M %p")}'
 
 let g:closetag_filenames = '*.html,*.xhtml,*.php'
-let g:SnazzyTransparent = 1
+let g:SnazzyTransparent = 0
 let g:indentLine_faster = 1
 let g:indentLine_setConceal = 0
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
