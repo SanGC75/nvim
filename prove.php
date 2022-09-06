@@ -8,8 +8,12 @@
 	<body>
 	</body>
 </html>
+<strong>
+<html>
+</html>
+</strong>
 <?php
-$sd = true;
+$sd = "";
 	is_array($sd);
 ?>
 

@@ -90,7 +90,14 @@ let g:indentLine_concealcursor = 'inc'
 let g:indentLine_conceallevel = 2
 let g:Hexokinase_highlighters = ['backgroundfull']
 let g:Hexokinase_ftEnabled = ['css', 'html', 'javascript']
-
+let g:coc_global_extensions = [
+			\ 'coc-snippets',
+			\ 'coc-sql',
+			\ 'coc-json',
+			\ 'coc-tsserver',
+			\ 'coc-html',
+			\ 'coc-css',
+			\	]
 """""Atajos de teclado"""""""
 nmap <leader>s <Plug>(easymotion-s2)
 nmap <leader>nt :NERDTreeFind<CR>
