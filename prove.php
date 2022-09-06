@@ -7,17 +7,10 @@
 	</head>
 	<body>
 	</body>
-<<<<<<< HEAD
-</hml>
-=======
 </html>
-<strong>
-<html>
-</html>
-</strong>
->>>>>>> f41c643b1e2be76c5f128d7418506140e1655609
 <?php
-$sd = "";
+$sd = "INSERT INTO";
+	idate(B);
 	is_array($sd);
 ?>
 
