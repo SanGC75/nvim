@@ -10,7 +10,9 @@
 </html>
 <?php
 $sd = "INSERT INTO";
-	idate(B);
+	<?php
+		nuevo co
+	?>idate(B);
 	is_array($sd);
 ?>
 
